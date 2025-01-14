@@ -1,11 +1,11 @@
 NAME = libasm.a
-# SRCS= ft_read.s\
-# 		ft_strcpy.s\
-# 		ft_strcmp.s\
-# 		ft_strdup.s\
-# 		ft_strlen.s\
-# 		ft_write.s
-SRCS= ft_strlen.s
+
+SRCS= ft_read.s\
+		ft_strcmp.s\
+		ft_strcpy.s\
+		ft_strdup.s\
+		ft_strlen.s\
+		ft_write.s
 SRCS_DIR= src
 
 OBJS_DIR= objs
