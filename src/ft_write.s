@@ -2,7 +2,7 @@ extern __errno_location
 ; section .text
 global ft_write
 
-ft_write:
+ft_write:           ; rdi: fd; rsi: str; rdx : len
     ; setup the stack frame (not mandatory in this case)
     push rbp        ; Save the old base pointer(rbp) onto the stack
     mov rbp, rsp    ; Set the base pointer to the current stack pointer
