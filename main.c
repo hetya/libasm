@@ -22,4 +22,10 @@ int main()
     char *test_strcpy = "Hello World!";
     char strcpy_dest[100] = {0};
     printf("ft_strcpy: %s, strcpy: %s\n", ft_strcpy(strcpy_dest, test_strcpy), strcpy(strcpy_dest, test_strcpy));
+    // test strcmp
+    char *test_strcmp1 = "Hello World!";
+    char *test_strcmp2 = "Hello World!";
+    char *test_strcmp3 = "Hello World";
+    printf("ft_strcmp: %d, strcmp: %d\n", strcmp(test_strcmp1, test_strcmp2), strcmp(test_strcmp1, test_strcmp2));
+    printf("ft_strcmp: %d, strcmp: %d\n", strcmp(test_strcmp1, test_strcmp3), strcmp(test_strcmp1, test_strcmp3));
 }
