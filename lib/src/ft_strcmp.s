@@ -4,7 +4,11 @@ section .text
 ft_strcmp:  ; rsi: s1; rdi: s2
     xor rcx, rcx        ; set rcx to 0
 
+    xor al,al
+
 .loop:
+    cmp byte [rdi], 0   ; set the Zero flag if the value is zero
+    jz .done
     mov al, [rsi + rcx] ; store the value of s1 in al
     sub al, [rdi +rcx]  ; substract the value of s2 from al and store the result in al
     jnz .done           ; end the loop if the result is not 0
@@ -14,4 +18,3 @@ ft_strcmp:  ; rsi: s1; rdi: s2
 .done:
     movzx rax, al        ; mov the diference to rax and fill the rest with 0
     ret
-

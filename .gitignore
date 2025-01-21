@@ -1,3 +1,4 @@
 objs/
 libasm.a
-test
+/test_libasm
+/.vscode
