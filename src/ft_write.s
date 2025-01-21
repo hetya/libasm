@@ -30,7 +30,7 @@ error:
 
     neg rax     ; make the error value absolute
     mov rdi, rax        ; copy the syscall error value in rdi
-    call __errno_location       ; get the errno
+    call __errno_location wrt ..plt     ; get the errno With respect to (WRT) Procedure Linkage Table(PLT) dynamic linker to resolve the address.
     mov [rax], rdi      ; put the copy of the syscall return at the address of errno
     mov rax, -1     ; set the return value to -1
 
