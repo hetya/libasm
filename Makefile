@@ -19,7 +19,7 @@ NASM_FLAGS = -f elf64
 
 CC = gcc
 FLAGS = -Wall -Wextra -Werror
-FLAGS += -fsanitize=address -g3
+# FLAGS += -fsanitize=address -g3
 
 $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.s Makefile
 		printf "$(GREEN)Compiling: $< $(END)\n"

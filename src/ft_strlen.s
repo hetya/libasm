@@ -1,7 +1,7 @@
 global ft_strlen
 section .text
 
-ft_strlen:      ; rdi: str
+ft_strlen:              ; rdi: str
     xor rcx, rcx        ; set rcx to 0
 
 .loop:

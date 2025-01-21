@@ -7,10 +7,11 @@ ft_strcmp:  ; rsi: s1; rdi: s2
 .loop:
     mov al, [rsi + rcx] ; store the value of s1 in al
     sub al, [rdi +rcx]  ; substract the value of s2 from al and store the result in al
-    jnz .done
-    inc rcx
+    jnz .done           ; end the loop if the result is not 0
+    inc rcx             ; increment index
     jmp .loop
 
 .done:
     movzx rax, al        ; mov the diference to rax and fill the rest with 0
+    ret
 

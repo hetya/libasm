@@ -16,7 +16,7 @@ int main()
 {
     char *test_str = "Hello World!\n";
     // write
-    // printf("ret : %ld, should return : %ld\n", ft_write(1, test_str, strlen(test_str)), write(1, test_str, strlen(test_str)));
+    printf("ret : %ld, should return : %ld\n", ft_write(1, test_str, strlen(test_str)), write(1, test_str, strlen(test_str)));
     // printf("ret : %ld, should return : %ld\n", ft_write(-1, test_str, strlen(test_str)), write(-1, test_str, strlen(test_str)));
     // strlen();
     printf("ft_strlen: %ld, strlen: %ld\n", ft_strlen(test_str), strlen(test_str));
