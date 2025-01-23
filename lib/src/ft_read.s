@@ -2,8 +2,8 @@ global ft_read
 section .text
 extern __errno_location
 
-ft_read:
-    mov rax, 0x00       ; syscall number for read, args are already in the right registers
+ft_read:                            ; rdi: fd, rsi: buf, rdx: len
+    mov rax, 0x00                   ; syscall number for read, args are already in the right registers
     syscall
     test rax, rax
     js .error                       ; jump to the error label if the sign flag is set

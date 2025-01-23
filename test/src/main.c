@@ -15,12 +15,13 @@ int main()
     printf("ft_strcpy: %s, strcpy: %s\n", ft_strcpy(ft_strcpy_dest, test_strcpy), strcpy(strcpy_dest, test_strcpy));
     printf("new string :%s, %s\n", strcpy_dest, ft_strcpy_dest);
     // test strcmp
-    char *test_strcmp1 = "Hello World!";
-    char *test_strcmp2 = "Hello World!";
-    char *test_strcmp3 = "Hello World";
+    char *test_strcmp1 = "Hello!";
+    char *test_strcmp2 = "Hello!";
+    char *test_strcmp3 = "Hello";
     printf("ft_strcmp: %d, strcmp: %d\n", ft_strcmp(test_strcmp1, test_strcmp2), strcmp(test_strcmp1, test_strcmp2));
     printf("ft_strcmp: %d, strcmp: %d\n", ft_strcmp(test_strcmp1, test_strcmp3), strcmp(test_strcmp1, test_strcmp3));
     printf("ft_strcmp: %d, strcmp: %d\n", ft_strcmp(test_strcmp3, test_strcmp1), strcmp(test_strcmp3, test_strcmp1));
+    printf("strcmp: %d\n", strcmp("Helab", "Hello"));
     // test strdup
     char *test_strdup = "Hello World!";
     char *result_ft_strdup;

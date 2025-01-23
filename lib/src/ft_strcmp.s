@@ -1,20 +1,26 @@
 global ft_strcmp
 section .text
 
-ft_strcmp:  ; rsi: s1; rdi: s2
-    xor rcx, rcx        ; set rcx to 0
+ft_strcmp:                      ; rdi: str1; rsi: str2
+    xor rcx, rcx                ; set rcx to 0
+    push rbx
 
-    xor al,al
 
 .loop:
-    cmp byte [rdi], 0   ; set the Zero flag if the value is zero
-    jz .done
-    mov al, [rsi + rcx] ; store the value of s1 in al
-    sub al, [rdi +rcx]  ; substract the value of s2 from al and store the result in al
-    jnz .done           ; end the loop if the result is not 0
-    inc rcx             ; increment index
+    xor rax, rax
+    xor rbx, rbx
+    mov al, [rdi + rcx]         ; store the value of str1 in al
+    mov bl, [rsi + rcx]         ; store the value of str2 in bl
+    sub rax, rbx
+    jnz .done                   ; end the loop if the result is not 0
+    cmp byte [rdi + rcx], 0     ; check if the it is the end of str2
+    je .done
+    cmp byte [rsi + rcx], 0     ; check if it is the end of str1
+    je .done
+    inc rcx                     ; increment index
     jmp .loop
 
 .done:
-    movzx rax, al        ; mov the diference to rax and fill the rest with 0
+    pop rbx
     ret
+

@@ -1,11 +1,19 @@
 ## Some useful doc
 
 Register used for function argument : rdi, rsi, rdx, rcx, r8, r9
-The first 6 integer/pointer arguments are passed in:
+The first 6 integer/pointer arguments in order are passed in:
 RDI, RSI, RDX, RCX, R8, R9.
-Additional arguments are passed on the stack.
+Additional arguments are then passed on the stack in reverse order (i.e. last parameter first)
 </br>
 <img src="resources/register.png" alt="Register usage diagram" width="450" height="250">
+
+## Save register
+
+Caller saved register (volatile register or call-clobbered):
+RAX, RCX, RDX, RSI, RDI, R8, R9, R10, R11
+
+Callee Saved (non-volatile registers or call-preserved):
+RBX, RBP, RSP, R12, R13, R14, R15.
 
 ## When you create a new stack frame
 

@@ -12,8 +12,8 @@ ft_write:                           ; rdi: fd; rsi: str; rdx : len
     ; Same here we don't need to move the return value to rax since the syscall already does it
 
     ; error handling
-    test rax, rax
-    js .error
+    test rax, rax                   ; check if the syscall failed
+    js .error                       ; jump to the error label if the sign flag is set
 
     ret
     
