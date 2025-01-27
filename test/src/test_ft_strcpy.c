@@ -2,17 +2,17 @@
 
 static int	test_basic_copy(void)
 {
-	char	libasm_dest[100];
+	char	obtained_dest[100];
 	char	expected_dest[100];
 	char	*src;
 
 	src = "Hello, World!";
-	ft_strcpy(libasm_dest, src);
+	ft_strcpy(obtained_dest, src);
 	strcpy(expected_dest, src);
-	if (strcmp(libasm_dest, expected_dest) != 0)
+	if (strcmp(obtained_dest, expected_dest) != 0)
 	{
 		printf("Test 1 failed: expected %s, got %s\n",
-			expected_dest, libasm_dest);
+			expected_dest, obtained_dest);
 		return (1);
 	}
 	return (0);
@@ -20,17 +20,17 @@ static int	test_basic_copy(void)
 
 static int	test_empty_string(void)
 {
-	char	libasm_dest[100];
+	char	obtained_dest[100];
 	char	expected_dest[100];
 	char	*src;
 
 	src = "";
-	ft_strcpy(libasm_dest, src);
+	ft_strcpy(obtained_dest, src);
 	strcpy(expected_dest, src);
-	if (strcmp(libasm_dest, expected_dest) != 0)
+	if (strcmp(obtained_dest, expected_dest) != 0)
 	{
 		printf("Test 2 failed: expected %s, got %s\n",
-			expected_dest, libasm_dest);
+			expected_dest, obtained_dest);
 		return (1);
 	}
 	return (0);

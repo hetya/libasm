@@ -13,9 +13,8 @@ static int	test_ft_strcmp2(void)
 	str5 = "Hello";
 	if (ft_strcmp(str1, str3) != strcmp(str1, str3))
 	{
-		printf("Test 3 failed: expected %d, got %d\n",
-			strcmp(str1, str3), ft_strcmp(str1, str3));
-		return (1);
+		return (printf("Test 3 failed: expected %d, got %d\n",
+				strcmp(str1, str3), ft_strcmp(str1, str3)) || 1);
 	}
 	if (ft_strcmp(str1, str4) != strcmp(str1, str4))
 	{
