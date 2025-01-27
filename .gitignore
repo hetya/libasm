@@ -2,3 +2,4 @@ objs/
 libasm.a
 /test_libasm
 /.vscode
+/.test_write_file

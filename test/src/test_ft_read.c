@@ -1,6 +1,6 @@
 #include "libasm.h"
 
-int	test_read_empty_file(void)
+static int	test_read_empty_file(void)
 {
 	int		fd;
 	char	expected_output[100];
@@ -18,7 +18,7 @@ int	test_read_empty_file(void)
 	return (0);
 }
 
-int	test_invalid_fd(void)
+static int	test_invalid_fd(void)
 {
 	char	expected_output[100];
 	char	libasm_output[100];
@@ -34,7 +34,7 @@ int	test_invalid_fd(void)
 	return (0);
 }
 
-int	test_read_zero_bytes(void)
+static int	test_read_zero_bytes(void)
 {
 	int		fd;
 	char	expected_output[100];
@@ -51,7 +51,7 @@ int	test_read_zero_bytes(void)
 	return (0);
 }
 
-int	test_buffer_larger_than_file(void)
+static int	test_buffer_larger_than_file(void)
 {
 	int		fd;
 	char	expected_output[1000];
@@ -81,10 +81,12 @@ int	test_ft_read(void)
 	expected_ret = read(fd, expected_output, 100);
 	libasm_ret = ft_read(fd, libasm_output, 100);
 	close(fd);
+	printf("libasm_ret: %ld, expected_ret: %ld\n", libasm_ret, expected_ret);
+	printf("libasm_output: %s, expected_output: %s\n", libasm_output,
+		expected_output);
 	if (expected_ret != libasm_ret
 		|| strcmp(expected_output, libasm_output) != 0)
 		return (1);
-
 	if (test_read_empty_file() != 0)
 		return (2);
 	if (test_invalid_fd() != 0)
