@@ -23,7 +23,13 @@ NASM_FLAGS = -f elf64
 
 TEST_NAME = test_libasm
 
-TEST_SRCS=main.c
+TEST_SRCS=main.c\
+		test_ft_read.c\
+		test_ft_strcmp.c\
+		test_ft_strcpy.c\
+		test_ft_strdup.c\
+		test_ft_strlen.c\
+		test_ft_write.c
 
 TEST_SRCS_DIR= test/src
 
