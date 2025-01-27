@@ -36,7 +36,7 @@ static int	test_invalid_fd(void)
 	expected_errno = errno;
 	obtained_return = ft_write(-1, "Hello, Error!\n", 14);
 	obtained_errno = errno;
-	if (obtained_return != expected_return || expected_errno == obtained_errno)
+	if (obtained_return != expected_return || expected_errno != obtained_errno)
 	{
 		printf("Test 3 Failed: exp %ld and errno %d, got %ld and errno %d\n",
 			expected_return, expected_errno, obtained_return, obtained_errno);
@@ -56,7 +56,7 @@ static int	test_write_null(void)
 	expected_errno = errno;
 	obtained_return = ft_write(1, NULL, 0);
 	obtained_errno = errno;
-	if (expected_return != obtained_return || expected_errno == obtained_errno)
+	if (expected_return != obtained_return || expected_errno != obtained_errno)
 	{
 		printf("Test 4 failed: exp %ld and errno %d, got %ld and errno %d\n",
 			expected_return, expected_errno, obtained_return, obtained_errno);
