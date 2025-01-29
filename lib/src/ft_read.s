@@ -12,9 +12,9 @@ ft_read:                            ; rdi: fd, rsi: buf, rdx: len
 
 .error:
     neg rax
-    mov rdi, rax
+    mov rdx, rax
     call __errno_location wrt ..plt
-    mov [rax], rdi
+    mov [rax], rdx
     mov rax, -1
     
     ret

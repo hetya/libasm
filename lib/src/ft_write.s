@@ -19,9 +19,9 @@ ft_write:                           ; rdi: fd; rsi: str; rdx : len
     
 .error:
     neg rax                         ; make the error value absolute
-    mov rdi, rax                    ; copy the syscall error value in rdi
+    mov rdx, rax                    ; copy the syscall error value in rdx
     call __errno_location wrt ..plt ; get the errno With respect to (WRT) Procedure Linkage Table(PLT) dynamic linker to resolve the address.
-    mov [rax], rdi                  ; put the copy of the syscall return at the address of errno
+    mov [rax], rdx                  ; put the copy of the syscall return at the address of errno
     mov rax, -1                     ; set the return value to -1
 
     ret

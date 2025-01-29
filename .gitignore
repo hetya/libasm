@@ -3,3 +3,5 @@ libasm.a
 /test_libasm
 /.vscode
 /.test_write_file
+/libasmTester
+/42libasm_tester

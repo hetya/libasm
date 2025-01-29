@@ -83,13 +83,18 @@ static int	test_write_0_bytes(void)
 
 int	test_ft_write(void)
 {
-	ssize_t	ret;
+	ssize_t	expected_return;
+	ssize_t	obtained_return;
 
 	printf("====== TEST OUTPUT ======\n");
-	ret = ft_write(1, "Hello, World!\n", 14);
-	if (ret != 14)
+	expected_return = write(1, "Hello, World!\n", 14);
+	obtained_return = ft_write(1, "Hello, World!\n", 14);
+	printf("=========================\n");
+
+	if (expected_return != obtained_return)
 	{
-		printf("Test 1 failed: expected 14, got %zd\n", ret);
+		printf("Test 1 failed: expected %ld, got %ld\n", expected_return,
+			obtained_return);
 		return (1);
 	}
 	if (test_writing_file())
@@ -100,6 +105,5 @@ int	test_ft_write(void)
 		return (1);
 	if (test_write_0_bytes())
 		return (1);
-	printf("=========================\n");
 	return (0);
 }

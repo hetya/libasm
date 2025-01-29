@@ -41,7 +41,7 @@ TEST_OBJS= $(addprefix $(TEST_OBJS_DIR)/, $(TEST_SRCS:.c=.o))
 
 CC = gcc
 FLAGS = -Wall -Wextra -Werror
-FLAGS += -fsanitize=address -g3
+# FLAGS += -fsanitize=address -g3
 
 
 # ~~~~~~~~~ COMPILE LIBASM ~~~~~~~~~~
