@@ -19,7 +19,11 @@ static int	test_read_empty_file(void)
 	close(fd);
 	if (expected_ret != obtained_ret_value
 		|| strcmp(expected_output, obtained_output) != 0)
+	{
+		printf("Test 3 failed: expected %ld and buf %s, got %ld and buf %s\n",
+			expected_ret, expected_output, obtained_ret_value, obtained_output);
 		return (1);
+	}
 	return (0);
 }
 
@@ -41,7 +45,11 @@ static int	test_read_zero_bytes(void)
 	obtained_ret_value = ft_read(fd, obtained_output, 0);
 	close(fd);
 	if (expected_ret != obtained_ret_value)
+	{
+		printf("Test 4 failed: expected %ld and buf %s, got %ld and buf %s\n", 
+		expected_ret, expected_output, obtained_ret_value, obtained_output);
 		return (1);
+	}
 	return (0);
 }
 
@@ -66,7 +74,11 @@ static int	test_buffer_larger_than_file(void)
 	close(fd);
 	if (expected_ret != obtained_ret_value
 		|| strcmp(expected_output, obtained_output) != 0)
+	{
+		printf("Test 5 failed: expected %ld and buf %s, got %ld and buf %s\n",
+			expected_ret, expected_output, obtained_ret_value, obtained_output);
 		return (1);
+	}
 	return (0);
 }
 
@@ -82,7 +94,11 @@ static int	test_invalid_fd(void)
 	expected_errno = errno;
 	obtained_ret_value = ft_read(-1, obtained_output, 100);
 	if (expected_ret != obtained_ret_value || expected_errno != errno)
+	{
+		printf("Test 2 failed: exp %ld and errno %d, got %ld and errno %d\n",
+			expected_ret, expected_errno, obtained_ret_value, errno);
 		return (1);
+	}
 	if (test_read_empty_file() != 0)
 		return (2);
 	if (test_read_zero_bytes() != 0)
