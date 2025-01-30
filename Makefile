@@ -12,7 +12,6 @@ LIB_SRCS= ft_read.s\
 LIB_SRCS_DIR= lib/src
 
 LIB_OBJS_DIR= lib/objs
-# LIB_OBJS= $(LIB_SRCS:.s=.o)
 LIB_OBJS= $(addprefix $(LIB_OBJS_DIR)/, $(LIB_SRCS:.s=.o))
 
 
@@ -65,7 +64,6 @@ $(TEST_OBJS_DIR)/%.o: $(TEST_SRCS_DIR)/%.c Makefile $(TEST_INCLUDES_DIR)/$(TEST_
 	$(CC) $(FLAGS) -I$(TEST_INCLUDES_DIR) -c $< -o $@
 
 test $(TEST_NAME): $(TEST_OBJS) $(NAME) Makefile
-	printf $(TEST_OBJS)
 	$(CC) $(FLAGS) $(TEST_OBJS) -L. -lasm -o $(TEST_NAME)
 
 
