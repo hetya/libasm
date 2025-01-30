@@ -10,12 +10,14 @@ static int	test_read_empty_file(void)
 
 	fd = open("./test/test_read_empty_file", O_RDONLY);
 	expected_ret = read(fd, expected_output, 100);
+	expected_output[expected_ret] = 0;
 	if (lseek(fd, 0, SEEK_SET))
 	{
 		perror("lseek");
 		return (1);
 	}
 	obtained_ret_value = ft_read(fd, obtained_output, 100);
+	obtained_output[obtained_ret_value] = 0;
 	close(fd);
 	if (expected_ret != obtained_ret_value
 		|| strcmp(expected_output, obtained_output) != 0)
@@ -37,12 +39,14 @@ static int	test_read_zero_bytes(void)
 
 	fd = open("./test/test_read_file", O_RDONLY);
 	expected_ret = read(fd, expected_output, 0);
+	expected_output[expected_ret] = 0;
 	if (lseek(fd, 0, SEEK_SET))
 	{
 		perror("lseek");
 		return (1);
 	}
 	obtained_ret_value = ft_read(fd, obtained_output, 0);
+	obtained_output[obtained_ret_value] = 0;
 	close(fd);
 	if (expected_ret != obtained_ret_value)
 	{
