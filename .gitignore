@@ -1,5 +1,5 @@
-objs/
-libasm.a
+objs
+/libasm.a
 /test_libasm
 /.vscode
 /.test_write_file
