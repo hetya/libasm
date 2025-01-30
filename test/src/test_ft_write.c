@@ -90,7 +90,6 @@ int	test_ft_write(void)
 	expected_return = write(1, "Hello, World!\n", 14);
 	obtained_return = ft_write(1, "Hello, World!\n", 14);
 	printf("=========================\n");
-
 	if (expected_return != obtained_return)
 	{
 		printf("Test 1 failed: expected %ld, got %ld\n", expected_return,

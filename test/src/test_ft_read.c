@@ -50,8 +50,8 @@ static int	test_read_zero_bytes(void)
 	close(fd);
 	if (expected_ret != obtained_ret_value)
 	{
-		printf("Test 4 failed: expected %ld and buf %s, got %ld and buf %s\n", 
-		expected_ret, expected_output, obtained_ret_value, obtained_output);
+		printf("Test 4 failed: expected %ld and buf %s, got %ld and buf %s\n",
+			expected_ret, expected_output, obtained_ret_value, obtained_output);
 		return (1);
 	}
 	return (0);
