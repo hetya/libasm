@@ -73,6 +73,7 @@ test $(TEST_NAME): $(TEST_OBJS) $(NAME) Makefile
 
 clean:
 		rm -rf $(LIB_OBJS_DIR)
+		rm -rf $(TEST_OBJS_DIR)
 
 fclean: clean
 		rm -f $(NAME)
