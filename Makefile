@@ -76,6 +76,8 @@ clean:
 
 fclean: clean
 		rm -f $(NAME)
+		rm -f $(TEST_NAME)
+		rm -f .test_write_file
 
 re : fclean all
 
