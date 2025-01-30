@@ -3,11 +3,11 @@ section .text
 
 ft_strcmp:                      ; rdi: str1; rsi: str2
     xor rcx, rcx                ; set rcx to 0
-    push rbx
+    push rbx                    ; save rbx  (callee saved register)
 
 
 .loop:
-    xor rax, rax
+    xor rax, rax                ; empty regs
     xor rbx, rbx
     mov al, [rdi + rcx]         ; store the value of str1 in al
     mov bl, [rsi + rcx]         ; store the value of str2 in bl
@@ -21,6 +21,6 @@ ft_strcmp:                      ; rdi: str1; rsi: str2
     jmp .loop
 
 .done:
-    pop rbx
+    pop rbx                     ; restore rbx
     ret
 

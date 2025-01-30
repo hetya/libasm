@@ -5,7 +5,7 @@ extern ft_strcpy
 extern malloc
 
 ft_strdup:          ; rdi: str
-    ; setup the stack frame
+    ; create a stack frame even if it is not necessary here since we have no local variables
     push rbp        ; Save the old base pointer(rbp) onto the stack
     mov rbp, rsp    ; Set the base pointer to the current stack pointer
 
@@ -17,7 +17,7 @@ ft_strdup:          ; rdi: str
     test rax,rax    ; check if malloc failed
     jz .done
 
-    pop rsi         ; pop the first parameter from the stack
+    pop rsi         ; put the first parameter from the stack on rsi
     mov rdi, rax    ; mov the destination in rdi
     call ft_strcpy
     
